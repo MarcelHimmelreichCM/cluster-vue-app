@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  IMAGE_NAME: ghcr.io/MarcelHimmelreichCM/cluster-vue-app/vue-app
+  IMAGE_NAME: ghcr.io/marcelhimmelreichcm/cluster-vue-app/vue-app
 
 jobs:
   build-and-push:
@@ -37,7 +37,7 @@ jobs:
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          repository: MarcelHimmelreichCM/cluster-vue-app-config
+          repository: marcelhimmelreichcm/cluster-vue-app-config
           event-type: update-image
           client-payload: '{"tag": "${{ env.IMAGE_NAME }}:latest"}'
 
